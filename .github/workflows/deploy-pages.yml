@@ -1,0 +1,35 @@
+# name: Deploy GitBook to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - gh-pages
+
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v3
+#       with:
+#         fetch-depth: 0  Fetch all history for .GitInfo and .Lastmod
+
+#     - name: Setup Node.js environment
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: 12.16.3  选择需要的 Node.js 版本
+
+#     - name: Install GitBook CLI
+#       run: npm install -g gitbook-cli
+
+#     - name: Build GitBook
+#       run: gitbook build
+
+#     - name: Deploy to GitHub Pages
+#       uses: peaceiris/actions-gh-pages@v3
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
+#         publish_dir: ./_book  GitBook 构建输出的目录
+#         user_name: 'github-actions[bot]'
+#         user_email: 'github-actions[bot]@users.noreply.github.com'
+#         exclude_assets: '**/node_modules/*,**/README.md'
